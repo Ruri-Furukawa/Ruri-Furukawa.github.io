@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruri Furukawa</title>
+  <link rel="icon" href="images/profile.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">Ruri Furukawa</a>
+    <button type="button" class="hamburger" id="hamburger" aria-label="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="nav-panel" id="nav-panel">
+    <a href="#home" data-i18n="nav.home"></a>
+    <a href="#projects" data-i18n="nav.projects"></a>
+    <a href="#education" data-i18n="nav.education"></a>
+    <a href="#employment" data-i18n="nav.employment"></a>
+    <a href="#outputs" data-i18n="nav.outputs"></a>
+    <a href="#skills" data-i18n="nav.skills"></a>
+    <a href="#awards" data-i18n="nav.awards"></a>
+    <a href="#others" data-i18n="nav.others"></a>
+    <a href="#interests" data-i18n="nav.interests"></a>
+    <a href="#contact" data-i18n="nav.contact"></a>
+  </nav>
+  <div class="nav-scrim" id="nav-scrim"></div>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-photo">
+        <img src="images/profile.jpg" alt="Ruri Furukawa" />
+      </div>
+      <h1 id="hero-name"></h1>
+      <p class="hero-role" data-i18n="hero.role"></p>
+      <p class="hero-intro" id="hero-intro"></p>
+    </section>
+
+    <section id="projects" class="page-section">
+      <h2><span data-i18n="section.projects"></span></h2>
+      <div class="card-grid" id="projects-grid"></div>
+    </section>
+
+    <section id="education" class="page-section">
+      <h2><span data-i18n="section.education"></span></h2>
+      <div class="timeline" id="education-timeline"></div>
+    </section>
+
+    <section id="employment" class="page-section">
+      <h2><span data-i18n="section.employment"></span></h2>
+      <div class="timeline" id="employment-timeline"></div>
+    </section>
+
+    <section id="outputs" class="page-section">
+      <h2><span data-i18n="section.outputs"></span></h2>
+      <div class="filter-bar" id="outputs-filter">
+        <button type="button" class="filter-btn active" data-filter="all" data-i18n="outputs.filter.all"></button>
+        <button type="button" class="filter-btn" data-filter="paper" data-i18n="outputs.filter.paper"></button>
+        <button type="button" class="filter-btn" data-filter="talk" data-i18n="outputs.filter.talk"></button>
+        <button type="button" class="filter-btn" data-filter="poster" data-i18n="outputs.filter.poster"></button>
+        <button type="button" class="filter-btn" data-filter="blog" data-i18n="outputs.filter.blog"></button>
+      </div>
+      <div class="card-grid" id="outputs-grid"></div>
+    </section>
+
+    <section id="skills" class="page-section">
+      <h2><span data-i18n="section.skills"></span></h2>
+      <div id="skills-list" class="kv-list"></div>
+    </section>
+
+    <section id="awards" class="page-section">
+      <h2><span data-i18n="section.awards"></span></h2>
+      <ul id="awards-list" class="plain-list"></ul>
+    </section>
+
+    <section id="others" class="page-section">
+      <h2><span data-i18n="section.others"></span></h2>
+      <ul id="others-list" class="plain-list"></ul>
+    </section>
+
+    <section id="interests" class="page-section">
+      <h2><span data-i18n="section.interests"></span></h2>
+      <div id="interests-tags" class="tag-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <h2><span data-i18n="section.contact"></span></h2>
+    <div id="footer-links" class="footer-links"></div>
+    <p class="footer-note" data-i18n="footer.builtWith"></p>
+  </footer>
+
+  <button type="button" class="chat-widget-btn" id="chat-widget-btn" data-i18n="chat.label"></button>
+  <div class="toast" id="toast"></div>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box" id="modal-box"></div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
