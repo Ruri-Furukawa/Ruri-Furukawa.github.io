@@ -231,8 +231,8 @@ function setupHamburger() {
   panel.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
 }
 
-// Vercel project hosting api/chat.js — update after the project is deployed.
-const CHAT_API_URL = "https://YOUR-VERCEL-PROJECT.vercel.app/api/chat";
+// Vercel project hosting api/chat.js.
+const CHAT_API_URL = "https://portfolio-delta-jade-34.vercel.app/api/chat";
 
 function initChatWidget() {
   const btn = document.getElementById("chat-widget-btn");
