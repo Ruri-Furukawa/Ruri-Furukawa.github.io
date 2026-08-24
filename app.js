@@ -24,6 +24,22 @@ function renderHero() {
   document.getElementById("hero-intro").textContent = PROFILE.intro;
 }
 
+function renderHeroLinks() {
+  const container = document.getElementById("hero-links");
+  container.innerHTML = "";
+  for (const link of LINKS) {
+    const a = el("a", "hero-link", ICONS[link.label] ?? "");
+    a.href = link.url;
+    a.title = link.label;
+    a.setAttribute("aria-label", link.label);
+    if (!link.url.startsWith("mailto:")) {
+      a.target = "_blank";
+      a.rel = "noopener";
+    }
+    container.appendChild(a);
+  }
+}
+
 function renderTimeline(containerId, items) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -232,6 +248,7 @@ function initChatWidget() {
 function init() {
   applyStaticTranslations();
   renderHero();
+  renderHeroLinks();
   renderTimeline("education-timeline", EDUCATION);
   renderTimeline("employment-timeline", EMPLOYMENT);
   setupOutputsFilter();
