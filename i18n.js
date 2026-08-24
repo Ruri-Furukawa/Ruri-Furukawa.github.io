@@ -40,8 +40,13 @@ const translations = {
 
     "modal.close": "Close",
 
-    "chat.label": "Ask me — coming soon",
-    "chat.toast": "Chat isn't set up yet — check back soon.",
+    "chat.label": "Ask me anything",
+    "chat.panelTitle": "Ask about Ruri",
+    "chat.inputPlaceholder": "Type a question…",
+    "chat.send": "Send",
+    "chat.greeting": "Hi! Ask me about my background, research, or projects.",
+    "chat.thinking": "Thinking…",
+    "chat.error": "Something went wrong — try again in a moment.",
 
     "footer.builtWith": "Thanks for stopping by.",
   },
@@ -70,6 +75,9 @@ export function t(key, vars) {
 export function applyStaticTranslations(root = document) {
   root.querySelectorAll("[data-i18n]").forEach((el) => {
     el.textContent = t(el.dataset.i18n);
+  });
+  root.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    el.placeholder = t(el.dataset.i18nPlaceholder);
   });
   document.documentElement.lang = getLang();
 }

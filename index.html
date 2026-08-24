@@ -94,8 +94,18 @@
     <p class="footer-note" data-i18n="footer.builtWith"></p>
   </footer>
 
+  <div class="chat-panel" id="chat-panel">
+    <div class="chat-panel-header">
+      <span data-i18n="chat.panelTitle"></span>
+      <button type="button" class="chat-panel-close" id="chat-panel-close" aria-label="close">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <form class="chat-input-row" id="chat-form">
+      <input type="text" id="chat-input" data-i18n-placeholder="chat.inputPlaceholder" autocomplete="off" />
+      <button type="submit" data-i18n="chat.send"></button>
+    </form>
+  </div>
   <button type="button" class="chat-widget-btn" id="chat-widget-btn" data-i18n="chat.label"></button>
-  <div class="toast" id="toast"></div>
 
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal-box" id="modal-box"></div>

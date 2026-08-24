@@ -231,17 +231,66 @@ function setupHamburger() {
   panel.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
 }
 
-// Inert for now: wires the button up to a toast instead of a real backend.
-// Swapping this for a call to /api/chat.js later is the only change needed.
+// Vercel project hosting api/chat.js — update after the project is deployed.
+const CHAT_API_URL = "https://YOUR-VERCEL-PROJECT.vercel.app/api/chat";
+
 function initChatWidget() {
   const btn = document.getElementById("chat-widget-btn");
-  const toast = document.getElementById("toast");
-  let hideTimer = null;
-  btn.addEventListener("click", () => {
-    toast.textContent = t("chat.toast");
-    toast.classList.add("visible");
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => toast.classList.remove("visible"), 2500);
+  const panel = document.getElementById("chat-panel");
+  const closeBtn = document.getElementById("chat-panel-close");
+  const form = document.getElementById("chat-form");
+  const input = document.getElementById("chat-input");
+  const messagesEl = document.getElementById("chat-messages");
+  const history = [];
+  let greeted = false;
+
+  function appendMessage(role, text) {
+    const bubble = document.createElement("div");
+    bubble.className = `chat-message chat-message-${role}`;
+    bubble.textContent = text;
+    messagesEl.appendChild(bubble);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return bubble;
+  }
+
+  function togglePanel() {
+    const opening = !panel.classList.contains("open");
+    panel.classList.toggle("open", opening);
+    if (opening) {
+      if (!greeted) {
+        appendMessage("assistant", t("chat.greeting"));
+        greeted = true;
+      }
+      input.focus();
+    }
+  }
+
+  btn.addEventListener("click", togglePanel);
+  closeBtn.addEventListener("click", () => panel.classList.remove("open"));
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const message = input.value.trim();
+    if (!message) return;
+    input.value = "";
+    appendMessage("user", message);
+    const priorHistory = history.slice();
+    history.push({ role: "user", text: message });
+    const pending = appendMessage("assistant", t("chat.thinking"));
+
+    try {
+      const res = await fetch(CHAT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message, history: priorHistory }),
+      });
+      if (!res.ok) throw new Error(`Chat request failed (${res.status})`);
+      const data = await res.json();
+      pending.textContent = data.answer;
+      history.push({ role: "assistant", text: data.answer });
+    } catch (err) {
+      pending.textContent = t("chat.error");
+    }
   });
 }
 
