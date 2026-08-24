@@ -80,8 +80,76 @@ export const OUTPUTS = [
     meta: "Furukawa, R. (2026). Wikimania 2026. (Poster)",
     url: "https://commons.wikimedia.org/wiki/File:Cross-cultural_understanding_of_Japanese_and_English_Wikipedia_experience_as_an_exchange_student.pdf",
   },
-  // No blog posts published yet — the "Blog" filter stays wired up and
-  // renders an empty state until entries are added here.
+  {
+    type: "blog",
+    date: "2026.8",
+    title: "Perhaps, the most important skill in the age of AI agent might be communication",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/f7e7bdca979d0ac4c434",
+  },
+  {
+    type: "blog",
+    date: "2026.8",
+    title: "LLM Wiki vs arscontexta: comparison of two manuals on myself",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/d2ac63da2f7933819c79",
+  },
+  {
+    type: "blog",
+    date: "2026.8",
+    title: "Creating a user manual on myself with LLM Wiki",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/92cad7e3e8f3ef000f9a",
+  },
+  {
+    type: "blog",
+    date: "2026.8",
+    title: "I asked AI to suggest recipes and ended up with a dystopia",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/69880415a5e14a40fe4b",
+  },
+  {
+    type: "blog",
+    date: "2026.8",
+    title: "The error reason of Claude Code was a file name, unexpectedly",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/22103b65af69f238731a",
+  },
+  {
+    type: "blog",
+    date: "2026.8",
+    title: "Let's create a twitter-like note-taking tool: connecting Obsidian with Discord",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/2c88920423fd7c495e55",
+  },
+  {
+    type: "blog",
+    date: "2026.4",
+    title: "Managing college life with OR-Tools",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/3811f5a92b4ba7e5797f",
+  },
+  {
+    type: "blog",
+    date: "2025.10",
+    title: "Editing narratives with object-oriented programming",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/5e575d45be5c8805e262",
+  },
+  {
+    type: "blog",
+    date: "2025.10",
+    title: "Summary of informatics studies I saw while studying in the UK",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/493b813a01f25b4ca26d",
+  },
+  {
+    type: "blog",
+    date: "2025.9",
+    title: "Shift-scheduling problem with Python for beginners",
+    meta: "Qiita",
+    url: "https://qiita.com/java_wocky/items/3187540d3a570ac802bc",
+  },
 ];
 
 export const PINNED = [
