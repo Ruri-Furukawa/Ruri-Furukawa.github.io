@@ -31,11 +31,15 @@ function cosineSimilarity(a, b) {
 
 async function embed(text) {
   const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key=${API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent?key=${API_KEY}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: { parts: [{ text }] } }),
+      body: JSON.stringify({
+        content: { parts: [{ text }] },
+        taskType: "RETRIEVAL_QUERY",
+        outputDimensionality: 768,
+      }),
     }
   );
   if (!res.ok) throw new Error(`Embedding request failed (${res.status}): ${await res.text()}`);
@@ -66,7 +70,7 @@ async function generate(question, contextChunks, history) {
   ];
 
   const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${API_KEY}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
