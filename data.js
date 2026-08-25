@@ -166,6 +166,14 @@ export const OUTPUTS = [
     meta: "Qiita",
     url: "https://qiita.com/java_wocky/items/3187540d3a570ac802bc",
   },
+  {
+    type: "project",
+    date: "2026.8",
+    title: "Daily Routines of Creatives",
+    summary: null,
+    meta: "A timeline of what great figures were doing throughout the day.",
+    url: "https://daily-routines-viewer.vercel.app/",
+  },
 ];
 
 export const PINNED = [
@@ -215,6 +223,11 @@ export const SKILLS = {
 // markdown-style [label](url) links, rendered via mdLinks() in app.js.
 export const ACTIVITIES = [
   {
+    period: "2021",
+    title:
+      "Participated in the [AIG High School Diplomats](https://www.highschooldiplomats.org/) program",
+  },
+  {
     period: "2023 – 2024",
     title: "Dean's List (2023 Spring / Autumn, 2024 Spring)",
   },
@@ -240,10 +253,6 @@ export const ACTIVITIES = [
     period: "2026.7 – 2026.9",
     title:
       "Currently enrolled in the [Course on Deep Generative Model from Matsuo-Iwasawa Laboratory](https://weblab.t.u-tokyo.ac.jp/lecture/course-list/deep-generative-model/)",
-  },
-  {
-    period: "2026.8",
-    title: "Created [Daily Routines of Creatives](https://daily-routines-viewer.vercel.app/)",
   },
 ];
 

@@ -34,6 +34,7 @@ const translations = {
     "outputs.filter.talk": "Talks",
     "outputs.filter.poster": "Posters",
     "outputs.filter.blog": "Blog",
+    "outputs.filter.project": "Projects",
     "outputs.empty": "No entries yet.",
 
     "modal.close": "Close",
