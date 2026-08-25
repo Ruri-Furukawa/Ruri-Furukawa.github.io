@@ -68,7 +68,7 @@ export const OUTPUTS = [
     title: "Editing Wikipedia as a volunteer: my experience at the UK and insights for Japan",
     summary: null,
     meta: "Furukawa, R. (2025). (Oral presentation)",
-    url: null,
+    url: "https://speakerdeck.com/java_wocky/borantia-toshiteno-henshuu",
   },
   {
     type: "talk",
@@ -76,7 +76,7 @@ export const OUTPUTS = [
     title: "My international experience as a university student Wikipedian",
     summary: null,
     meta: "Furukawa, R. (2026). ESEAP Conference 2026. (Oral presentation)",
-    url: "https://docs.google.com/presentation/d/1f_KZXXTaVTVcwFkym_gKMYd-xqlgrVkHF-EiwXFu51M/edit?slide=id.g3dea71b0df2_0_34#slide=id.g3dea71b0df2_0_34",
+    url: "https://speakerdeck.com/java_wocky/my-international-experience-as-a-university-student-wikipedian",
   },
   {
     type: "poster",
