@@ -5,8 +5,7 @@ import {
   OUTPUTS,
   PINNED,
   SKILLS,
-  AWARDS,
-  OTHERS,
+  ACTIVITIES,
   INTERESTS,
   LINKS,
 } from "./data.js";
@@ -17,6 +16,15 @@ function el(tag, className, html) {
   if (className) node.className = className;
   if (html !== undefined) node.innerHTML = html;
   return node;
+}
+
+// Converts the site's own hardcoded [label](url) markdown links to <a> tags.
+// Content here is always author-controlled, never user input.
+function mdLinks(text) {
+  return text.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener">$1</a>'
+  );
 }
 
 function renderHero() {
@@ -49,8 +57,8 @@ function renderTimeline(containerId, items) {
       "timeline-entry",
       `<div class="timeline-period">${item.period}</div>
        <div class="timeline-body">
-         <div class="timeline-title">${item.title}</div>
-         <div class="timeline-place">${item.place}</div>
+         <div class="timeline-title">${mdLinks(item.title)}</div>
+         ${item.place ? `<div class="timeline-place">${item.place}</div>` : ""}
        </div>`
     );
     container.appendChild(entry);
@@ -159,18 +167,6 @@ function renderSkills() {
     for (const item of items) list.appendChild(el("li", null, item));
     block.appendChild(list);
     container.appendChild(block);
-  }
-}
-
-function renderPlainList(containerId, items) {
-  const list = document.getElementById(containerId);
-  list.innerHTML = "";
-  for (const item of items) {
-    const text = typeof item === "string" ? item : item.text;
-    const url = typeof item === "string" ? null : item.url;
-    list.appendChild(
-      el("li", null, url ? `${text} — <a href="${url}" target="_blank" rel="noopener">link</a>` : text)
-    );
   }
 }
 
@@ -306,11 +302,10 @@ function init() {
   renderHeroLinks();
   renderTimeline("education-timeline", EDUCATION);
   renderTimeline("employment-timeline", EMPLOYMENT);
+  renderTimeline("awards-timeline", ACTIVITIES);
   setupOutputsFilter();
   renderProjects();
   renderSkills();
-  renderPlainList("awards-list", AWARDS);
-  renderPlainList("others-list", OTHERS);
   renderInterests();
   renderFooterLinks();
   setupHamburger();

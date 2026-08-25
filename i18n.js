@@ -14,8 +14,7 @@ const translations = {
     "nav.outputs": "Outputs",
     "nav.projects": "Projects",
     "nav.skills": "Skills",
-    "nav.awards": "Awards",
-    "nav.others": "Others",
+    "nav.awards": "Awards & Activities",
     "nav.interests": "Interests",
     "nav.contact": "Contact",
 
@@ -26,8 +25,7 @@ const translations = {
     "section.outputs": "Outputs",
     "section.projects": "Pinned Projects",
     "section.skills": "Skills",
-    "section.awards": "Awards",
-    "section.others": "Others",
+    "section.awards": "Awards & Activities",
     "section.interests": "Interested In",
     "section.contact": "Links",
 

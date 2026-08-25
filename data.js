@@ -211,31 +211,39 @@ export const SKILLS = {
   "AI tools": ["Claude Code"],
 };
 
-export const AWARDS = [
-  "Dean's list (2023 Spring / Autumn, 2024 Spring)",
-  "Gyomu Super Japan Dream Foundation — Scholarship recipient, 2024",
-];
-
-export const OTHERS = [
+// Awards + Others, merged into one chronological timeline. `title` may embed
+// markdown-style [label](url) links, rendered via mdLinks() in app.js.
+export const ACTIVITIES = [
   {
-    text: "Supported booth exhibition at the Open Source Conference 2025 Tokyo/Fall (2025.10) and West-Japan Wikimedia Conference 2025 (2025.12)",
-    url: null,
+    period: "2023 – 2024",
+    title: "Dean's List (2023 Spring / Autumn, 2024 Spring)",
   },
   {
-    text: "Completed the University of Tokyo Global Consumer Intelligence Endowed Course (2024.9)",
-    url: null,
+    period: "2024",
+    title: "Gyomu Super Japan Dream Foundation — Scholarship Recipient",
   },
   {
-    text: "Contributed to the administration of Waseda AI community as a committee (2024)",
-    url: null,
+    period: "2024",
+    title: "Contributed to the administration of Waseda AI community as a committee",
   },
   {
-    text: "Currently enrolled in the Course on Deep Generative Model from Matsuo-Iwasawa Laboratory (2026.7–9)",
-    url: null,
+    period: "2024.9",
+    title:
+      "Completed the [University of Tokyo Global Consumer Intelligence Endowed Course](https://gci2.t.u-tokyo.ac.jp/)",
   },
   {
-    text: "Created Daily Routines of Creatives (2026.8)",
-    url: "https://daily-routines-viewer.vercel.app/",
+    period: "2025.10 – 2025.12",
+    title:
+      "Supported booth exhibition at the [Open Source Conference 2025 Tokyo/Fall](https://event.ospn.jp/osc2025-fall/) and [West-Japan Wikimedia Conference 2025](https://meta.wikimedia.org/wiki/Wikimedians_of_Japan_User_Group/events/West-Japan_Wikimedia_Conference_2025)",
+  },
+  {
+    period: "2026.7 – 2026.9",
+    title:
+      "Currently enrolled in the [Course on Deep Generative Model from Matsuo-Iwasawa Laboratory](https://weblab.t.u-tokyo.ac.jp/lecture/course-list/deep-generative-model/)",
+  },
+  {
+    period: "2026.8",
+    title: "Created [Daily Routines of Creatives](https://daily-routines-viewer.vercel.app/)",
   },
 ];
 

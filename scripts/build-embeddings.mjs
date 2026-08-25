@@ -22,11 +22,15 @@ const {
   OUTPUTS,
   PINNED,
   SKILLS,
-  AWARDS,
-  OTHERS,
+  ACTIVITIES,
   INTERESTS,
   LINKS,
 } = await import(path.join(ROOT, "data.js"));
+
+// Flattens data.js's [label](url) markdown links to "label (url)" for embedding text.
+function stripMdLinks(text) {
+  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1 ($2)");
+}
 
 function chunksFromData() {
   const chunks = [];
@@ -54,9 +58,8 @@ function chunksFromData() {
   for (const [group, items] of Object.entries(SKILLS)) {
     chunks.push({ id: `skills-${group}`, text: `Skills — ${group}: ${items.join("; ")}.` });
   }
-  chunks.push({ id: "awards", text: `Awards: ${AWARDS.join("; ")}.` });
-  for (const [i, o] of OTHERS.entries()) {
-    chunks.push({ id: `others-${i}`, text: o.text + (o.url ? ` URL: ${o.url}` : "") });
+  for (const [i, a] of ACTIVITIES.entries()) {
+    chunks.push({ id: `activity-${i}`, text: `${a.period}: ${stripMdLinks(a.title)}` });
   }
   chunks.push({ id: "interests", text: `Interested in: ${INTERESTS.join("; ")}.` });
   chunks.push({
