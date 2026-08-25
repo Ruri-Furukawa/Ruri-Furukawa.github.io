@@ -72,15 +72,21 @@ function renderOutputs(filter = "all", limit = null) {
   }
 
   for (const item of shown) {
-    const card = el(
-      "article",
-      "card output-card",
-      `<div class="card-type">${item.type}</div>
+    const inner = `<div class="card-type">${item.type}</div>
        <h3 class="card-title">${item.title}</h3>
+       ${item.summary ? `<p class="card-summary">${item.summary}</p>` : ""}
        <p class="card-meta">${item.meta}</p>
        <div class="card-date">${item.date}</div>
-       ${item.url ? `<a class="card-link" href="${item.url}" target="_blank" rel="noopener">view →</a>` : ""}`
-    );
+       ${item.url ? `<span class="card-link">view →</span>` : ""}`;
+
+    const card = item.url
+      ? el("a", "card output-card", inner)
+      : el("article", "card output-card", inner);
+    if (item.url) {
+      card.href = item.url;
+      card.target = "_blank";
+      card.rel = "noopener";
+    }
     grid.appendChild(card);
   }
 }
