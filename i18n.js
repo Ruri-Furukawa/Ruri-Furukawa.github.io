@@ -80,3 +80,4 @@ export function applyStaticTranslations(root = document) {
   });
   document.documentElement.lang = getLang();
 }
+
