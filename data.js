@@ -33,6 +33,16 @@ export const EMPLOYMENT = [
     title: "Part-time staff",
     place: "Wikimedians of Japan User Group",
   },
+  {
+    period: "2026.9 – present",
+    title: "Engineering Internship",
+    place: "Infinimind, Inc.",
+  },
+  {
+    period: "2026.10 – present",
+    title: "Internship",
+    place: "NEXUS Japan, Inc.",
+  },
 ];
 
 // type: "paper" | "talk" | "poster" | "blog"
@@ -276,8 +286,8 @@ export const ACTIVITIES = [
       "Participated in the [AIG High School Diplomats](https://www.highschooldiplomats.org/) program",
   },
   {
-    period: "2023 – 2024",
-    title: "Dean's List (2023 Spring / Autumn, 2024 Spring)",
+    period: "2023 – 2026",
+    title: "Dean's List (2023 Spring / Autumn, 2024 Spring, 2026 Spring)",
   },
   {
     period: "2024",
